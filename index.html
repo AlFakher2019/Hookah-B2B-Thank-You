@@ -76,17 +76,21 @@
       window.onload = function () {
         var checkboxChecked = sessionStorage.getItem("checkboxChecked");
     
+        console.log("Retrieved value on Thank You Page:", checkboxChecked); // Debugging
+    
         if (checkboxChecked === "true") {
-          console.log('checkboxChecked')
           var message = {
             type: "formSubmitted",
             data: "The form has been submitted, and the checkbox was checked."
           };
           window.parent.postMessage(message, "*");
         }
+    
+        // Clear sessionStorage after use
         sessionStorage.removeItem("checkboxChecked");
       };
     </script>
+    
     
     
   </body>
