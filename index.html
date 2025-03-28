@@ -72,5 +72,21 @@
         >Browse the catalog</a
       >
     </div>
+    <script>
+      window.onload = function () {
+        var checkboxChecked = sessionStorage.getItem("checkboxChecked");
+    
+        if (checkboxChecked === "true") {
+          var message = {
+            type: "formSubmitted",
+            data: "The form has been submitted, and the checkbox was checked."
+          };
+          window.parent.postMessage(message, "*");
+        }
+        sessionStorage.removeItem("checkboxChecked");
+      };
+    </script>
+    
+    
   </body>
 </html>
