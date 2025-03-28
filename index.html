@@ -77,6 +77,7 @@
         var checkboxChecked = sessionStorage.getItem("checkboxChecked");
     
         if (checkboxChecked === "true") {
+          console.log('checkboxChecked')
           var message = {
             type: "formSubmitted",
             data: "The form has been submitted, and the checkbox was checked."
