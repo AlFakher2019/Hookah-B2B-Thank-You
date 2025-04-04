@@ -20,6 +20,17 @@
           font-family: "brandon-grotesque", sans-serif;
         }
       }
+      .line-b {
+        height: 8px;
+        width: 98%;
+        background-color: #857149;
+        border-radius: 100px 0px 0px 100px;
+      }
+      .line-w {
+        height: 8px;
+        width: 98%;
+        background-color: #EBEBED;
+      }
     </style>
   </head>
 
@@ -28,11 +39,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 99vh;
+      height: 80vh;
       margin: 0;
+      padding: 20px;
     "
   >
-    <div style="text-align: center; max-width: 600px">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 600px;">
       <img
         src="https://25636661.fs1.hubspotusercontent-eu1.net/hubfs/25636661/brand%20logos/hookah-thank.svg"
         alt="Icon"
@@ -44,54 +56,77 @@
       <p
         style="
           font-family: 'Public Sans';
-          margin-top: 20px;
           font-size: 14px;
           font-weight: 400;
           color: #4c4e52;
           padding: 0px 30px;
-          margin-bottom:60px;
+          margin-bottom: 60px;
         "
       >
         Applications are typically processed within 1-2 business days. You'll be
         notified by email. Once approved, you can log in to view pricing and
         shop.
       </p>
-      <a
-        href="https://preprod-business.hookah.com/" target="_blank"
-        style="
-          color: #ffffff;
-          text-decoration: none;
-          padding: 14px 38px;
-          background-color: #471169;
-          border-radius: 100px;
-          font-family: 'Poppins';
-          font-size: 16px;
-          text-transform: uppercase;
-          font-weight: 600;
-        "
-        >Browse the catalog</a
-      >
+      <div style="width: 100%;display: flex; margin-bottom: 50px; max-width: 400px;">
+        <div style="width: 50%;">
+          <div style=" display: flex; align-items: center;">
+            <div class="line-b"></div>
+          <img
+            src="https://25636661.fs1.hubspotusercontent-eu1.net/hubfs/25636661/brand%20logos/Bubble%20icon.svg"
+            alt="Icon"
+            style="display: block; margin: 0 auto; width: 24px"
+          />
+          </div>
+          <p style="font-family: 'Public Sans'; font-size: 12px; color: #101114;">Application submitted</p>      
+        </div>
+        <div style="width: 50%;">
+          <div style=" display: flex; align-items: center;">
+            <div class="line-w"></div>
+          <img
+            src="https://25636661.fs1.hubspotusercontent-eu1.net/hubfs/25636661/brand%20logos/Bubble%20icon%20white.svg"
+            alt="Icon"
+            style="display: block; margin: 0 auto; width: 24px"
+          />
+          </div> 
+          <p style="font-family: 'Public Sans'; font-size: 12px; color: #9C9EA3;">Verification in progress</p>   
+        </div>
+      </div>
+      <div>
+        <a
+          href="https://preprod-business.hookah.com/"
+          target="_blank"
+          style="
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 38px;
+            background-color: #471169;
+            border-radius: 100px;
+            font-family: 'Poppins';
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
+          "
+          >Browse the catalog</a
+        >
+      </div>
     </div>
     <script>
       window.onload = function () {
         var checkboxChecked = sessionStorage.getItem("checkboxChecked");
-    
+
         console.log("Retrieved value on Thank You Page:", checkboxChecked); // Debugging
-    
+
         if (checkboxChecked === "true") {
           var message = {
             type: "formSubmitted",
-            data: "The form has been submitted, and the checkbox was checked."
+            data: "The form has been submitted, and the checkbox was checked.",
           };
           window.parent.postMessage(message, "*");
         }
-    
+
         // Clear sessionStorage after use
         sessionStorage.removeItem("checkboxChecked");
       };
     </script>
-    
-    
-    
   </body>
 </html>
